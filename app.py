@@ -68,7 +68,7 @@ fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
 st.plotly_chart(fig)
 
 st.markdown(f"""
-**Analysis:** The line chart above illustrates how {selected_meat} consumption has evolved in selected countries from 1961 to 2020. Developed countries like the United States and Germany show a consistent increase in {selected_meat} consumption, reflecting economic growth and changing dietary preferences. Conversely, developing countries such as India and Nigeria display slower growth or stable consumption patterns, influenced by cultural factors and economic constraints.
+**Analysis:** The line chart above shows how {selected_meat} consumption has changed in the selected countries from 1961 to 2020. In developed countries like the United States and Germany, there's a clear increase in {selected_meat} consumption over time. This likely reflects both economic growth and a shift in dietary habits. On the other hand, developing countries like India and Nigeria have seen much slower growth or even stable levels of {selected_meat} consumption. This could be due to cultural factors, economic challenges, or limited access to certain types of meat.
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
@@ -81,7 +81,7 @@ gdp_fig = px.line(filtered_df, x='Year', y='GDP_per_capita', color='Entity',
 st.plotly_chart(gdp_fig)
 
 st.markdown("""
-**Analysis:** This graph shows the growth of GDP per capita in the selected countries. The United States and Germany exhibit steady economic growth over the decades, with a noticeable rise in GDP per capita. In contrast, countries like Nigeria and India have lower GDP per capita values, reflecting their developing status. These economic differences have significant implications for dietary habits and access to various types of meat.
+**Analysis:** This graph shows how GDP per capita has grown in the selected countries over the years. The United States and Germany have seen steady economic growth, with a noticeable rise in GDP per capita, reflecting their status as developed nations. In contrast, Nigeria and India, as developing countries, have lower GDP per capita values, although they show signs of gradual improvement. These differences in economic status are important because they can influence what people can afford to eat, including different types of meat.
 """)
 
 # --- Combined Visualization: GDP vs Total Meat Consumption ---
@@ -96,7 +96,7 @@ comparison_fig = px.scatter(filtered_df, x='GDP_per_capita', y='Total_meat_consu
 st.plotly_chart(comparison_fig)
 
 st.markdown("""
-**Analysis:** The scatter plot highlights the correlation between GDP per capita and total meat consumption across different countries. A positive correlation is evident, especially in developed countries, where higher GDP per capita aligns with increased meat consumption. However, developing countries show more varied patterns, indicating that factors beyond economic capacity, such as cultural norms and dietary restrictions, also influence meat consumption.
+**Analysis:** This scatter plot shows a clear relationship between GDP per capita and total meat consumption. In general, countries with higher GDP per capita, like the United States and Germany, also have higher levels of meat consumption. This suggests that as people have more money, they are more likely to include meat in their diets. However, in countries like India and Nigeria, the relationship isn't as straightforward. Cultural and religious factors, such as dietary restrictions in India, play a big role in shaping meat consumption regardless of economic status.
 """)
 
 # --- Bar Chart: Meat Consumption Comparison in a Specific Year ---
@@ -110,7 +110,7 @@ bar_fig = px.bar(latest_year_df, x='Entity', y=selected_meat, color='Entity',
 st.plotly_chart(bar_fig)
 
 st.markdown(f"""
-**Analysis:** The bar chart compares {selected_meat} consumption in 2020 across selected countries. Developed nations like the United States and Germany show higher consumption levels compared to developing countries like India and Nigeria. This comparison underscores how economic prosperity often translates to greater access to diverse food options, while cultural preferences and affordability continue to shape consumption patterns in developing regions.
+**Analysis:** This bar chart compares {selected_meat} consumption in 2020 across the selected countries. The United States and Germany have higher consumption levels, which aligns with their economic strength and dietary preferences. In contrast, India and Nigeria have much lower consumption levels. This could be due to a combination of economic factors and cultural practices that influence dietary choices.
 """)
 
 # --- Correlation Heatmap ---
@@ -124,7 +124,7 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', mask=np.triu(np.ones_like(
 st.pyplot(plt)
 
 st.markdown("""
-**Analysis:** The correlation heatmap illustrates the relationships between GDP per capita and various meat consumption types. Strong positive correlations between GDP and certain meat types (e.g., beef and pork) suggest that higher economic status often correlates with increased consumption of specific meats. Conversely, weaker correlations or negative trends may indicate cultural or regional preferences that deviate from purely economic influences.
+**Analysis:** The heatmap shows how closely different types of meat consumption are related to GDP per capita. We can see strong positive correlations between GDP and the consumption of certain meats like beef and pork. This means that in wealthier countries, people tend to eat more of these types of meat. However, some types of meat, like fish and seafood, may not be as strongly linked to economic status and could depend more on regional availability or cultural preferences.
 """)
 
 # --- Additional Charts ---
@@ -139,7 +139,7 @@ pork_fig = px.bar(latest_year_df, x='Entity', y='Pork', color='Entity',
 st.plotly_chart(pork_fig)
 
 st.markdown("""
-**Analysis:** The pork consumption chart reveals interesting cultural differences. Countries like Germany have high pork consumption, reflecting their traditional cuisine, while countries like India and Nigeria show minimal pork consumption due to cultural and religious restrictions.
+**Analysis:** This chart highlights the differences in pork consumption between countries. Germany has high pork consumption, which reflects its traditional cuisine. On the other hand, India and Nigeria show very low pork consumption due to cultural and religious practices that discourage or prohibit eating pork.
 """)
 
 # Sheep and Goat Consumption Comparison Across Countries
@@ -152,7 +152,7 @@ sheep_goat_fig = px.bar(latest_year_df, x='Entity', y='Sheep and goat', color='E
 st.plotly_chart(sheep_goat_fig)
 
 st.markdown("""
-**Analysis:** Sheep and goat consumption is more prevalent in countries like Nigeria, reflecting traditional dietary preferences, while it remains lower in countries like the United States and Germany. This highlights the influence of local agriculture and food culture on meat consumption patterns.
+**Analysis:** Sheep and goat consumption is more common in countries like Nigeria, where these animals are a traditional part of the diet. In contrast, countries like the United States and Germany consume less of these meats, likely due to different dietary preferences and agricultural practices.
 """)
 
 # Beef Consumption Comparison Across Countries
@@ -165,7 +165,7 @@ beef_fig = px.bar(latest_year_df, x='Entity', y='Beef', color='Entity',
 st.plotly_chart(beef_fig)
 
 st.markdown("""
-**Analysis:** The beef consumption chart highlights distinct patterns across countries. The United States shows high beef consumption, aligning with its strong beef industry and cultural preference for beef. In contrast, countries like India have very low beef consumption due to religious practices, while Nigeria and Germany fall somewhere in between, reflecting diverse dietary influences.
+**Analysis:** Beef consumption varies widely between countries. The United States shows high beef consumption, reflecting both its cultural preference and its strong beef industry. In contrast, India's beef consumption is very low due to religious beliefs that discourage eating beef. Nigeria and Germany fall somewhere in between, reflecting a mix of cultural and economic influences.
 """)
 
 # Other Meats Consumption Comparison Across Countries
@@ -178,11 +178,15 @@ other_meats_fig = px.bar(latest_year_df, x='Entity', y='Other meats', color='Ent
 st.plotly_chart(other_meats_fig)
 
 st.markdown("""
-**Analysis:** The "Other Meats" category encompasses less common meats, and its consumption varies widely depending on regional culinary traditions. Countries like Nigeria might show higher consumption of such meats due to diverse local diets, whereas Western countries may have lower consumption.
+**Analysis:** The "Other Meats" category includes less common types of meat, and their consumption can vary greatly depending on local traditions and availability. Nigeria, for example, might have higher consumption of these meats due to diverse local diets, while countries like the United States and Germany may consume less.
 """)
 
 # --- Conclusion ---
 st.markdown("""
 ### Conclusion
-This project demonstrates that economic growth significantly influences meat consumption patterns, with developed countries exhibiting higher levels of meat consumption compared to developing countries. However, cultural norms, dietary preferences, and religious practices also play crucial roles in shaping these patterns. Understanding these dynamics provides valuable insights into global dietary trends and the impact of economic development on food consumption.
+This project shows that economic growth plays a big role in influencing meat consumption patterns. Developed countries like the United States and Germany tend to have higher meat consumption due to greater economic prosperity and accessibility.
+
+For example, in India, religious beliefs have a strong influence on meat consumption, leading to lower levels of beef and pork consumption. In contrast, Nigeria shows varying patterns influenced by local traditions and economic conditions.
+
+Overall, while economic growth often leads to higher meat consumption, it's clear that other factors like culture, religion, and regional preferences also shape dietary habits. This highlights the complex relationship between economy and food consumption across different countries.
 """)
