@@ -65,16 +65,11 @@ with col2:
 filtered_df = df[df['Entity'].isin(selected_countries)]
 
 # --- Visualization: Trend Over Time for Selected Countries ---
-
-
 st.subheader(f"{selected_meat} Consumption Over Time")
 
 fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
               title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
               labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
-
-st.plotly_chart(fig, use_container_width=True)
-
 
 st.plotly_chart(fig)
 
@@ -89,9 +84,7 @@ gdp_fig = px.line(filtered_df, x='Year', y='GDP_per_capita', color='Entity',
                   title=f"GDP per Capita in Selected Countries (1961-2020)",
                   labels={'GDP_per_capita': 'GDP per Capita (constant 2017 international $)'})
 
-st.plotly_chart(gdp_fig, use_container_width=True)
-
-
+st.plotly_chart(gdp_fig)
 
 st.markdown("""
 **Analysis:** This graph shows how GDP per capita has grown in the selected countries over the years. The United States and Germany have seen steady economic growth, with a noticeable rise in GDP per capita, reflecting their status as developed nations. In contrast, Nigeria and India, as developing countries, have lower GDP per capita values, although they show signs of gradual improvement. These differences in economic status are important because they can influence what people can afford to eat, including different types of meat.
@@ -106,7 +99,7 @@ comparison_fig = px.scatter(filtered_df, x='GDP_per_capita', y='Total_meat_consu
                                     'Total_meat_consumption': 'Total Meat Consumption (kg per capita)'},
                             trendline='ols')
 
-st.plotly_chart(comparison_fig, use_container_width=True)
+st.plotly_chart(comparison_fig)
 
 st.markdown("""
 **Analysis:** This scatter plot shows a clear relationship between GDP per capita and total meat consumption. In general, countries with higher GDP per capita, like the United States and Germany, also have higher levels of meat consumption. This suggests that as people have more money, they are more likely to include meat in their diets. However, in countries like India and Nigeria, the relationship isn't as straightforward. Cultural and religious factors, such as dietary restrictions in India, play a big role in shaping meat consumption regardless of economic status.
@@ -120,7 +113,7 @@ bar_fig = px.bar(latest_year_df, x='Entity', y=selected_meat, color='Entity',
                  title=f"{selected_meat} Consumption in Selected Countries (2020)",
                  labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
 
-st.plotly_chart(bar_fig, use_container_width=True)
+st.plotly_chart(bar_fig)
 
 st.markdown(f"""
 **Analysis:** This bar chart compares {selected_meat} consumption in 2020 across the selected countries. The United States and Germany have higher consumption levels, which aligns with their economic strength and dietary preferences. In contrast, India and Nigeria have much lower consumption levels. This could be due to a combination of economic factors and cultural practices that influence dietary choices.
@@ -149,7 +142,7 @@ pork_fig = px.bar(latest_year_df, x='Entity', y='Pork', color='Entity',
                   title="Pork Consumption in Selected Countries (2020)",
                   labels={'Pork': 'Pork Consumption (kg per capita)'})
 
-st.plotly_chart(pork_fig, use_container_width=True)
+st.plotly_chart(pork_fig)
 
 st.markdown("""
 **Analysis:** This chart highlights the differences in pork consumption between countries. Germany has high pork consumption, which reflects its traditional cuisine. On the other hand, India and Nigeria show very low pork consumption due to cultural and religious practices that discourage or prohibit eating pork.
@@ -162,9 +155,7 @@ sheep_goat_fig = px.bar(latest_year_df, x='Entity', y='Sheep and goat', color='E
                         title="Sheep and Goat Consumption in Selected Countries (2020)",
                         labels={'Sheep and goat': 'Sheep and Goat Consumption (kg per capita)'})
 
-st.plotly_chart(sheep_goat_fig, use_container_width=True)
-
-
+st.plotly_chart(sheep_goat_fig)
 
 st.markdown("""
 **Analysis:** Sheep and goat consumption is more common in countries like Nigeria, where these animals are a traditional part of the diet. In contrast, countries like the United States and Germany consume less of these meats, likely due to different dietary preferences and agricultural practices.
@@ -177,7 +168,7 @@ beef_fig = px.bar(latest_year_df, x='Entity', y='Beef', color='Entity',
                   title="Beef Consumption in Selected Countries (2020)",
                   labels={'Beef': 'Beef Consumption (kg per capita)'})
 
-st.plotly_chart(beef_fig, use_container_width=True)
+st.plotly_chart(beef_fig)
 
 st.markdown("""
 **Analysis:** Beef consumption varies widely between countries. The United States shows high beef consumption, reflecting both its cultural preference and its strong beef industry. In contrast, India's beef consumption is very low due to religious beliefs that discourage eating beef. Nigeria and Germany fall somewhere in between, reflecting a mix of cultural and economic influences.
@@ -190,8 +181,7 @@ other_meats_fig = px.bar(latest_year_df, x='Entity', y='Other meats', color='Ent
                          title="Other Meats Consumption in Selected Countries (2020)",
                          labels={'Other meats': 'Other Meats Consumption (kg per capita)'})
 
-st.plotly_chart(other_meats_fig, use_container_width=True)
-
+st.plotly_chart(other_meats_fig)
 
 st.markdown("""
 **Analysis:** The "Other Meats" category includes less common types of meat, and their consumption can vary greatly depending on local traditions and availability. Nigeria, for example, might have higher consumption of these meats due to diverse local diets, while countries like the United States and Germany may consume less.
