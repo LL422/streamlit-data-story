@@ -10,9 +10,15 @@ st.title("The Relationship Between Economic Growth and Meat Consumption")
 
 st.markdown("""
 ### Main Idea
-This project explores the relationship between economic growth (measured by GDP per capita) and meat consumption in various countries, with a focus on comparing developed and developing nations. By analyzing these trends, we aim to uncover how economic prosperity influences dietary habits and how cultural, environmental, and economic factors shape meat consumption patterns globally.
+This project explores the relationship between economic growth (measured by GDP per capita) and meat consumption in various countries, with a focus on comparing developed and developing nations. In this project, we will focus mainly on these four countries: United States and Germany (both developed countries) & India and Nigeria (both developing countries). By analyzing these trends, we aim to uncover how economic prosperity influences dietary habits and how cultural, environmental, and economic factors shape meat consumption patterns globally.
 
 ---
+
+### Why This Matters
+As countries grow economically, people often change what they eat. Meat consumption can tell us a lot about how economies grow and how culture, religion, and the environment play a role in shaping diets. Understanding these patterns helps us see the bigger picture of how economic changes affect everyday life, like what ends up on our plates.
+
+---
+
 """)
 
 # --- Load Data ---
@@ -181,6 +187,21 @@ st.markdown("""
 **Analysis:** The "Other Meats" category includes less common types of meat, and their consumption can vary greatly depending on local traditions and availability. Nigeria, for example, might have higher consumption of these meats due to diverse local diets, while countries like the United States and Germany may consume less.
 """)
 
+# --- Reflection ---
+st.markdown("""
+### Reflection on the Process
+
+When I first started this project, I thought the relationship between economic growth and meat consumption would be simple—more money equals more meat. But the deeper I went, the more I realized it’s not that straightforward. I struggled a bit with cleaning and merging the datasets, especially getting the years to match up and making sure the country names were consistent. There were also times when the graphs didn’t look the way I expected, and I had to adjust how I was handling the data.
+
+One thing that surprised me was how much cultural and religious factors affect meat consumption. For instance, India’s low beef consumption has little to do with income levels and more to do with religious beliefs. This made me rethink how I was interpreting the data.
+
+If I had more time, I would probably explore other factors like environmental policies or health trends that might also affect meat consumption. I’d also look into more specific data on different types of meat in more countries.
+
+What I liked best about this project was seeing how data visualization makes complex information easier to understand. Turning raw data into charts and graphs really helped me (and hopefully others) see patterns that aren’t obvious in a spreadsheet.
+
+---
+""")
+
 # --- Conclusion ---
 st.markdown("""
 ### Conclusion
@@ -189,4 +210,13 @@ This project shows that economic growth plays a big role in influencing meat con
 For example, in India, religious beliefs have a strong influence on meat consumption, leading to lower levels of beef and pork consumption. In contrast, Nigeria shows varying patterns influenced by local traditions and economic conditions.
 
 Overall, while economic growth often leads to higher meat consumption, it's clear that other factors like culture, religion, and regional preferences also shape dietary habits. This highlights the complex relationship between economy and food consumption across different countries.
+""")
+
+# --- Citation ---
+
+st.markdown("""
+### References
+
+Scibearia. (2024, December 12). Meat consumption per capita. Kaggle. https://www.kaggle.com/datasets/scibearia/meat-consumption-per-capita 
+
 """)
