@@ -10,15 +10,18 @@ st.title("The Relationship Between Economic Growth and Meat Consumption")
 
 st.markdown("""
 ### Main Idea
-This project explores the relationship between economic growth (measured by GDP per capita) and meat consumption in various countries, with a focus on comparing developed and developing nations. In this project, we will focus mainly on these four countries: United States and Germany (both developed countries) & India and Nigeria (both developing countries). By analyzing these trends, we aim to uncover how economic prosperity influences dietary habits and how cultural, environmental, and economic factors shape meat consumption patterns globally.
+This project explores the relationship between economic growth (measured by GDP per capita) and meat consumption in various countries, focusing on:
+- **Developed Countries:** United States & Germany  
+- **Developing Countries:** India & Nigeria  
+
+By analyzing these trends, we aim to uncover how economic prosperity influences dietary habits and how cultural, environmental, and economic factors shape meat consumption patterns globally.
 
 ---
 
 ### Why This Matters
-As countries grow economically, people often change what they eat. Meat consumption can tell us a lot about how economies grow and how culture, religion, and the environment play a role in shaping diets. Understanding these patterns helps us see the bigger picture of how economic changes affect everyday life, like what ends up on our plates.
+As countries grow economically, people often change their diets. Meat consumption patterns reveal key insights about economic development, cultural traditions, and environmental impacts. Understanding these relationships helps us analyze broader economic and social trends.
 
 ---
-
 """)
 
 # --- Load Data ---
@@ -38,6 +41,10 @@ def load_data():
     # Calculate total meat consumption per capita
     meat_columns = ['Poultry', 'Beef', 'Sheep and goat', 'Pork', 'Other meats', 'Fish and seafood']
     merged_data['Total_meat_consumption'] = merged_data[meat_columns].sum(axis=1, skipna=True)
+
+    # Filter data for the four selected countries
+    selected_countries = ['United States', 'Germany', 'India', 'Nigeria']
+    merged_data = merged_data[merged_data['Entity'].isin(selected_countries)]
 
     return merged_data
 
