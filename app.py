@@ -20,15 +20,15 @@ By analyzing these trends, we aim to uncover how economic prosperity influences 
             
 ### Why These Countries?
 We selected these countries because they represent different economic stagtes and dietary habits:
-- **United States & Germany: High-income countries with strong food industries and high meat consumption. The U.S. leads in beef and poultry, while Germany consumes more pork.
-- **India & Nigeria: Lower-income countries where cultural and economic factors limit meat consumption. India has a large vegetarian population, while Nigeria's meat intake depends on affordability and availability.
+- **United States & Germany:** High-income countries with strong food industries and high meat consumption. The U.S. leads in beef and poultry, while Germany consumes more pork.
+- **India & Nigeria:** Lower-income countries where cultural and economic factors limit meat consumption. India has a large vegetarian population, while Nigeria's meat intake depends on affordability and availability.
 
 ---                         
 
 ### Why This Matters
 As economies grow, diets change. Meat consumption is more than just a food choice—it reflects income levels, cultural traditions, and environmental impacts.
 
-**Economic Impact:
+**Economic Impact:**
 - Higher GDP means people can afford more meat, often viewed as a sign of wealth and improved nutrition.            
 ---
 """)
