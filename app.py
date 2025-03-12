@@ -88,6 +88,12 @@ with col2:
 # Filter the Data
 filtered_df = df[df['Entity'].isin(selected_countries)]
 
+st.subheader("Dataset Preview")
+st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
+
+st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].head())
+
+
 # --- Visualization: Trend Over Time for Selected Countries ---
 st.subheader(f"{selected_meat} Consumption Over Time")
 
