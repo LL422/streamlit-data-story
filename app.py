@@ -97,14 +97,28 @@ st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria
 # --- Visualization: Trend Over Time for Selected Countries ---
 st.subheader(f"{selected_meat} Consumption Over Time")
 
+st.markdown("""
+This chart shows the annual **poultry consumption per capita (kg per person per year)** in the selected countries from **1961 to 2020**.
+
+- **X-axis:** Years (1961–2020)
+- **Y-axis:** Poultry consumption per person (kg)
+- **Colored Lines:** Each line represents a different country’s trend.
+
+#### **What This Chart Shows:**
+- **United States & Germany:** Significant increase in poultry consumption, reflecting economic growth and improved food accessibility.
+- **India & Nigeria:** Much lower poultry consumption, staying stable due to cultural and economic factors.
+""")
+
 fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
               title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
               labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
 
 st.plotly_chart(fig)
 
-st.markdown(f"""
-**Analysis:** The line chart above shows how {selected_meat} consumption has changed in the selected countries from 1961 to 2020. In developed countries like the United States and Germany, there's a clear increase in {selected_meat} consumption over time. This likely reflects both economic growth and a shift in dietary habits. On the other hand, developing countries like India and Nigeria have seen much slower growth or even stable levels of {selected_meat} consumption. This could be due to cultural factors, economic challenges, or limited access to certain types of meat.
+st.markdown("""
+**🔹 Key Takeaways:**  
+- **United States and Germany** show a clear increase in poultry consumption due to economic prosperity.  
+- **India and Nigeria** maintain **low poultry consumption**, influenced by cultural and financial constraints.
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
@@ -115,6 +129,7 @@ gdp_fig = px.line(filtered_df, x='Year', y='GDP_per_capita', color='Entity',
                   labels={'GDP_per_capita': 'GDP per Capita (constant 2017 international $)'})
 
 st.plotly_chart(gdp_fig)
+
 
 st.markdown("""
 **Analysis:** This graph shows how GDP per capita has grown in the selected countries over the years. The United States and Germany have seen steady economic growth, with a noticeable rise in GDP per capita, reflecting their status as developed nations. In contrast, Nigeria and India, as developing countries, have lower GDP per capita values, although they show signs of gradual improvement. These differences in economic status are important because they can influence what people can afford to eat, including different types of meat.
