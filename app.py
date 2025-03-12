@@ -265,11 +265,12 @@ At first, we considered using only static charts, but they didn’t allow for ex
 We also tried using only line charts, but they didn’t effectively show country comparisons at a single point in time, which is why bar charts were included. Additionally, scatter plots were added to better illustrate the link between GDP and meat consumption, which was unclear in other formats. Finally, heatmaps were introduced to visualize overall correlations more effectively.
 
 If we were to improve this further, we might add more filtering options or deeper breakdowns by region and income level to give a broader global perspective.
----
+
             """)
 
 # --- Reflection ---
 st.markdown("""
+---
 ### Reflection on the Process
 
 When I first started this project, I thought the relationship between economic growth and meat consumption would be simple—more money equals more meat. But the deeper I went, the more I realized it’s not that straightforward. I struggled a bit with cleaning and merging the datasets, especially getting the years to match up and making sure the country names were consistent. There were also times when the graphs didn’t look the way I expected, and I had to adjust how I was handling the data.
