@@ -375,7 +375,6 @@ We used different types of charts to make the data easier to understand. Line ch
 """)
 
 st.markdown("""
----
 
 Ethical Considerations
 
