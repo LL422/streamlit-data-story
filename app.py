@@ -365,9 +365,8 @@ If we were to improve this further, we might add more filtering options or deepe
             """)
 
 st.markdown("""
----
 
-Why These Visualizations Were Chosen
+**Why These Visualizations Were Chosen**
 
 We used different types of charts to make the data easier to understand. Line charts help show trends over time, bar charts compare countries in a specific year, scatter plots highlight relationships between variables, and heatmaps reveal correlations. Each visualization was selected to highlight key insights about how economic growth and cultural factors influence meat consumption.
 
