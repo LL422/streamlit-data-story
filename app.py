@@ -141,7 +141,6 @@ for country in selected_countries:
 
 st.markdown("""
 **Explore more:** Adjust the selections above to see different patterns across countries and meat types.
----
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
