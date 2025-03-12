@@ -80,11 +80,6 @@ Select countries and meat types below to see how consumption and GDP have change
 st.subheader("Dataset Preview")
 st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
 
-st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].groupby("Entity").head(5))
-
-st.subheader("Dataset Preview")
-st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
-
 st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].head())
 
 selected_countries = ["United States", "Germany", "India", "Nigeria"]
