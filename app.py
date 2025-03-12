@@ -51,52 +51,37 @@ def load_data():
 # Load the merged data
 df = load_data()
 
+# --- Move Filters to Main Page ---
 st.markdown("""
-### Meat Consumption Trends Over Time
-
-This section examines how **meat consumption per capita** has changed in four selected countries:  
-- **Developed Countries**: United States, Germany  
-- **Developing Countries**: India, Nigeria  
-
-The data comes from global food consumption reports, covering the period **1961-2020**. Each country’s consumption is measured in **kilograms per person per year**.
-
----
+### Explore Meat Consumption Trends
+Select countries and meat types below to see how consumption and GDP have changed over time.
 """)
 
-# Filter the Data (No User Input)
-selected_countries = ['United States', 'Germany', 'India', 'Nigeria']
+# Country and Meat Type Selection
+col1, col2 = st.columns(2)
+
+with col1:
+    countries = df['Entity'].unique()
+    selected_countries = st.multiselect("Select Countries:", countries, default=['United States', 'India', 'Germany', 'Nigeria'])
+
+with col2:
+    meat_types = ['Poultry', 'Beef', 'Sheep and goat', 'Pork', 'Other meats', 'Fish and seafood']
+    selected_meat = st.selectbox("Select Meat Type:", meat_types)
+
+# Filter the Data
 filtered_df = df[df['Entity'].isin(selected_countries)]
 
-# Line Chart: Meat Consumption Over Time
-st.subheader("Total Meat Consumption (1961-2020)")
+# --- Visualization: Trend Over Time for Selected Countries ---
+st.subheader(f"{selected_meat} Consumption Over Time")
 
-fig = px.line(filtered_df, x='Year', y='Total_meat_consumption', color='Entity',
-              title="Total Meat Consumption in Selected Countries (1961-2020)",
-              labels={'Total_meat_consumption': 'Total Meat Consumption (kg per capita)'})
+fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
+              title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
+              labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
 
 st.plotly_chart(fig)
 
-st.markdown("""
-### **Analysis: Understanding the Trends**
-This graph visualizes the change in **total meat consumption per capita** over time.
-
-#### **1. United States & Germany (Developed Countries)**
-- The **United States** shows a **steady increase** in meat consumption, reaching over **120 kg per person annually** by 2020.
-- **Germany** follows a similar trend but at a lower level, peaking around **85 kg per capita**.
-- These trends align with **higher income levels**, **industrialized farming**, and **greater meat availability**.
-
-#### **2. India & Nigeria (Developing Countries)**
-- **India's meat consumption remains low** throughout the period, staying below **5 kg per capita**.  
-  📌 **Why?** This is largely due to **religious and cultural dietary restrictions**, particularly the predominance of **vegetarianism**.
-- **Nigeria** shows a slow but **steady increase**, rising to about **10 kg per capita** by 2020.  
-  📌 **Why?** Factors such as **income growth**, **urbanization**, and **changing dietary habits** have contributed to this shift.
-
-#### **3. What This Means**
-- Economic growth is a key driver of meat consumption, but **culture plays an equally important role**.
-- Even with economic growth, **India’s meat consumption remains low**, showing that GDP is **not the only factor** influencing diet.
-- **Nigeria's increase** is moderate compared to Germany and the US, highlighting **economic constraints** and **limited access to industrialized meat production**.
-
----
+st.markdown(f"""
+**Analysis:** The line chart above shows how {selected_meat} consumption has changed in the selected countries from 1961 to 2020. In developed countries like the United States and Germany, there's a clear increase in {selected_meat} consumption over time. This likely reflects both economic growth and a shift in dietary habits. On the other hand, developing countries like India and Nigeria have seen much slower growth or even stable levels of {selected_meat} consumption. This could be due to cultural factors, economic challenges, or limited access to certain types of meat.
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
