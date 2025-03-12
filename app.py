@@ -237,7 +237,7 @@ st.markdown("""
 
 - **Fish and Seafood:** The connection between GDP and fish consumption is weaker. This suggests that fish consumption depends more on availability and cultural habits rather than just economic status.
 
-**Why This Matters:
+**Why This Matters:**
 
 - Countries with higher GDP usually have higher meat consumption, but the type of meat varies based on cultural preferences and regional availability.
 
@@ -337,8 +337,19 @@ other_meats_fig = px.bar(latest_year_df, x='Entity', y='Other meats', color='Ent
 st.plotly_chart(other_meats_fig)
 
 st.markdown("""
-**Analysis:** The "Other Meats" category includes less common types of meat, and their consumption can vary greatly depending on local traditions and availability. Nigeria, for example, might have higher consumption of these meats due to diverse local diets, while countries like the United States and Germany may consume less.
-""")
+**What This Chart Tells Us:**
+
+- **Nigeria:** Higher consumption of other meats is likely due to a diverse local diet that includes bushmeat, game, and other regionally available meats.
+
+- **United States & Germany:** Consumption of other meats is lower since poultry, beef, and pork dominate their diets. Some alternative meats, like venison or bison, are eaten but not widely consumed.
+
+- **India:** Due to cultural and religious dietary restrictions, consumption of alternative meats remains low, with a preference for plant-based proteins.
+
+**Why This Matters:**
+
+- Meat consumption isn’t just about economic status—local food traditions and availability shape what people eat.
+
+- Countries with access to a variety of wildlife or game meat tend to have more diverse meat consumption patterns.""")
 
 st.markdown("""
 ---
@@ -385,5 +396,7 @@ st.markdown("""
 ### References
 
 Scibearia. (2024, December 12). Meat consumption per capita. Kaggle. https://www.kaggle.com/datasets/scibearia/meat-consumption-per-capita 
+            
+Jiao, Hongxia. “An Overview of Meat Consumption in the United States.” Farmdoc Daily, 12 May 2021, farmdocdaily.illinois.edu/2021/05/an-overview-of-meat-consumption-in-the-united-states.html. 
 
 """)
