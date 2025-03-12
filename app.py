@@ -231,26 +231,50 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', mask=np.triu(np.ones_like(
 st.pyplot(plt)
 
 st.markdown("""
-**Analysis:** The heatmap shows how closely different types of meat consumption are related to GDP per capita. We can see strong positive correlations between GDP and the consumption of certain meats like beef and pork. This means that in wealthier countries, people tend to eat more of these types of meat. However, some types of meat, like fish and seafood, may not be as strongly linked to economic status and could depend more on regional availability or cultural preferences.
+**What This Chart Tells Us:**
+
+- **Beef and Pork:** These meats show a strong link to GDP. This means that wealthier countries tend to eat more beef and pork, likely due to better affordability and dietary preferences.
+
+- **Fish and Seafood:** The connection between GDP and fish consumption is weaker. This suggests that fish consumption depends more on availability and cultural habits rather than just economic status.
+
+**Why This Matters:
+
+- Countries with higher GDP usually have higher meat consumption, but the type of meat varies based on cultural preferences and regional availability.
+
+- Understanding these patterns helps explain why economic growth doesn’t always lead to the same dietary changes in every country.
+
 """)
 
 # --- Additional Charts ---
 
 # Pork Consumption Comparison Across Countries
 st.subheader("Pork Consumption Across Countries (2020)")
-
+st.markdown("""This bar chart compares pork consumption per person across different countries in 2020.""")
 pork_fig = px.bar(latest_year_df, x='Entity', y='Pork', color='Entity',
                   title="Pork Consumption in Selected Countries (2020)",
                   labels={'Pork': 'Pork Consumption (kg per capita)'})
 
 st.plotly_chart(pork_fig)
-
 st.markdown("""
-**Analysis:** This chart highlights the differences in pork consumption between countries. Germany has high pork consumption, which reflects its traditional cuisine. On the other hand, India and Nigeria show very low pork consumption due to cultural and religious practices that discourage or prohibit eating pork.
+**What This Chart Tells Us:**
+
+- **Germany:** Pork is a major part of German cuisine, which is why consumption is much higher compared to the other countries.
+
+- **United States:** Pork consumption is significant but lower than Germany, as poultry and beef are more popular in American diets.
+
+- **India & Nigeria:** Pork consumption is extremely low in both countries. In India, religious beliefs—particularly among Hindus and Muslims—strongly discourage pork consumption. In Nigeria, pork is not widely eaten due to both religious restrictions and lower availability.
+
+**Why This Matters:**
+
+- Economic growth does not always mean higher pork consumption—cultural and religious influences play a big role.
+
+- In some countries, even if people can afford more meat, they may avoid pork due to religious reasons, making diet trends more complex than just income levels.
 """)
+
 
 # Sheep and Goat Consumption Comparison Across Countries
 st.subheader("Sheep and Goat Consumption Across Countries (2020)")
+st.markdown("""This bar chart compares how much sheep and goat meat people ate per person in different countries in 2020.""")
 
 sheep_goat_fig = px.bar(latest_year_df, x='Entity', y='Sheep and goat', color='Entity',
                         title="Sheep and Goat Consumption in Selected Countries (2020)",
@@ -259,12 +283,26 @@ sheep_goat_fig = px.bar(latest_year_df, x='Entity', y='Sheep and goat', color='E
 st.plotly_chart(sheep_goat_fig)
 
 st.markdown("""
-**Analysis:** Sheep and goat consumption is more common in countries like Nigeria, where these animals are a traditional part of the diet. In contrast, countries like the United States and Germany consume less of these meats, likely due to different dietary preferences and agricultural practices.
+**What This Chart Tells Us:**
+
+- **Nigeria:** Sheep and goat meat are a traditional part of Nigerian diets, which is why consumption is higher compared to other countries.
+
+- **India:** Although India has lower overall meat consumption, sheep and goat meat are commonly eaten in some regions, particularly among communities that do not consume beef or pork.
+
+- **United States & Germany:** These countries consume much less sheep and goat meat, as their diets mainly focus on beef, poultry, and pork. These meats are not as commonly farmed or eaten in large quantities.
+
+**Why This Matters:**
+
+- Some meats are more commonly eaten in certain parts of the world due to tradition rather than economic status.
+
+- Availability also plays a role—countries that raise more sheep and goats tend to eat them more frequently.
+
+- While GDP affects meat consumption, cultural preferences strongly determine which types of meat are most popular.
 """)
 
 # Beef Consumption Comparison Across Countries
 st.subheader("Beef Consumption Across Countries (2020)")
-
+st.markdown("""This bar chart compares beef consumption per person across different countries in 2020.""")
 beef_fig = px.bar(latest_year_df, x='Entity', y='Beef', color='Entity',
                   title="Beef Consumption in Selected Countries (2020)",
                   labels={'Beef': 'Beef Consumption (kg per capita)'})
@@ -272,7 +310,21 @@ beef_fig = px.bar(latest_year_df, x='Entity', y='Beef', color='Entity',
 st.plotly_chart(beef_fig)
 
 st.markdown("""
-**Analysis:** Beef consumption varies widely between countries. The United States shows high beef consumption, reflecting both its cultural preference and its strong beef industry. In contrast, India's beef consumption is very low due to religious beliefs that discourage eating beef. Nigeria and Germany fall somewhere in between, reflecting a mix of cultural and economic influences.
+**What This Chart Tells Us:**
+
+- **United States:** Beef consumption is high due to strong cultural demand, a well-developed beef industry, and affordability. Steak, burgers, and processed beef products are common in American diets.
+
+- **Germany:** Beef consumption is lower than in the U.S. but still significant. Germany’s diet includes more pork, which reduces the reliance on beef.
+
+- **India:** Beef consumption is very low, primarily due to religious beliefs. Hinduism, which is followed by the majority of Indians, discourages or prohibits beef consumption.
+
+- **Nigeria:** Beef consumption is moderate but lower than in the U.S. and Germany. Economic factors and availability influence how much beef is eaten in Nigeria.
+
+**Why This Matters:**
+
+- Economic strength allows greater access to beef, but cultural and religious beliefs strongly influence consumption levels.
+
+- While higher GDP countries tend to eat more beef, India is an exception where cultural traditions limit consumption despite economic growth.
 """)
 
 # Other Meats Consumption Comparison Across Countries
