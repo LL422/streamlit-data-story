@@ -377,8 +377,9 @@ st.markdown("""
 
 Ethical Considerations
 
-This project focuses on economic trends and food consumption patterns. However, it’s important to acknowledge ethical concerns like food security, sustainability, and cultural sensitivity. Meat production has environmental impacts, and economic inequalities affect access to food. These factors should be considered when interpreting the data.
----
+This project focuses on economic trends and food consumption patterns. However, ethical concerns such as food security, sustainability, and cultural sensitivity should be considered. Meat production has significant environmental impacts, including deforestation, greenhouse gas emissions, and resource consumption. Additionally, economic inequalities affect access to meat, which can highlight disparities in food availability between countries.
+
+There is also a cultural aspect—dietary habits are deeply rooted in traditions and religious beliefs. When discussing global meat consumption, it’s important to respect these differences and avoid generalizations that assume economic growth alone determines diet choices. Ethical awareness helps ensure that discussions around food consumption remain respectful, inclusive, and mindful of real-world impacts.---
 """)
 
 # --- Reflection ---
