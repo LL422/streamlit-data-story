@@ -222,7 +222,7 @@ st.markdown(f"""
 
 # --- Correlation Heatmap ---
 st.subheader("Correlation Heatmap of Meat Consumption and GDP")
-
+st.markdown("""This heatmap shows how different types of meat consumption are related to GDP per capita. Darker colors indicate a stronger connection between GDP and meat consumption.""")
 correlation_columns = ['GDP_per_capita', 'Total_meat_consumption', 'Poultry', 'Beef', 'Sheep and goat', 'Pork', 'Other meats', 'Fish and seafood']
 corr_matrix = df[correlation_columns].corr()
 
