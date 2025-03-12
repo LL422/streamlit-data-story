@@ -141,12 +141,16 @@ for country in selected_countries:
     st.markdown(f"- **{country}:** {selected_meat} consumption has **{trend}** from **{start_value:.2f} kg per capita** in {country_data['Year'].iloc[0]} to **{end_value:.2f} kg per capita** in {country_data['Year'].iloc[-1]}.")
 
 st.markdown("""
----
 **Explore more:** Adjust the selections above to see different patterns across countries and meat types.
+---
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
 st.subheader(f"GDP per Capita Over Time")
+
+st.markdown("""
+This line chart tracks how GDP per capita (a measure of economic wealth per person) has changed over time in the selected countries. Each line represents a country, helping to compare their economic growth.
+""")
 
 gdp_fig = px.line(filtered_df, x='Year', y='GDP_per_capita', color='Entity',
                   title=f"GDP per Capita in Selected Countries (1961-2020)",
@@ -155,11 +159,21 @@ gdp_fig = px.line(filtered_df, x='Year', y='GDP_per_capita', color='Entity',
 st.plotly_chart(gdp_fig)
 
 st.markdown("""
-**Analysis:** This graph shows how GDP per capita has grown in the selected countries over the years. The United States and Germany have seen steady economic growth, with a noticeable rise in GDP per capita, reflecting their status as developed nations. In contrast, Nigeria and India, as developing countries, have lower GDP per capita values, although they show signs of gradual improvement. These differences in economic status are important because they can influence what people can afford to eat, including different types of meat.
+**Analysis:**
+
+- **United States & Germany:** These countries have consistently high GDP per capita, indicating economic stability and steady growth.
+
+- **India & Nigeria:** These nations show lower GDP per capita, though both have seen gradual increases over time. Economic constraints in these countries often affect people's ability to afford meat in their diets.
+
+- **Key takeaway:** Higher GDP generally means better food security and more diverse diets, while lower GDP can limit access to certain foods, including meat.
 """)
 
 # --- Combined Visualization: GDP vs Total Meat Consumption ---
 st.subheader(f"Comparison of GDP per Capita and Total Meat Consumption")
+
+st.markdown("""
+This scatter plot helps us understand if there’s a connection between a country’s economic strength (GDP per capita) and how much meat its people consume. Each dot represents a country in a specific year, showing whether wealthier nations eat more meat.
+""")
 
 comparison_fig = px.scatter(filtered_df, x='GDP_per_capita', y='Total_meat_consumption', color='Entity',
                             title=f"GDP per Capita vs Total Meat Consumption in Selected Countries",
@@ -170,7 +184,13 @@ comparison_fig = px.scatter(filtered_df, x='GDP_per_capita', y='Total_meat_consu
 st.plotly_chart(comparison_fig)
 
 st.markdown("""
-**Analysis:** This scatter plot shows a clear relationship between GDP per capita and total meat consumption. In general, countries with higher GDP per capita, like the United States and Germany, also have higher levels of meat consumption. This suggests that as people have more money, they are more likely to include meat in their diets. However, in countries like India and Nigeria, the relationship isn't as straightforward. Cultural and religious factors, such as dietary restrictions in India, play a big role in shaping meat consumption regardless of economic status.
+**Analysis:**
+
+- **United States & Germany:** Higher GDP per capita correlates with higher total meat consumption, showing that economic prosperity enables greater access to meat.
+
+- **India & Nigeria:** These countries have lower GDP per capita and correspondingly lower meat consumption, though cultural and religious factors also play a role.
+
+- **Key takeaway:** While GDP plays a significant role in determining meat consumption, cultural influences such as dietary restrictions in India also shape consumption patterns.
 """)
 
 # --- Bar Chart: Meat Consumption Comparison in a Specific Year ---
