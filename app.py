@@ -50,8 +50,7 @@ As economies grow, diets change. Meat consumption is more than just a food choic
 
 - **Heatmaps:** Show correlations between GDP and different types of meat consumption, helping to highlight patterns across multiple variables.
 
-Each chart type was chosen to make complex data easier to understand and to highlight different aspects of the relationship between economic growth and meat consumption.
----    
+Each chart type was chosen to make complex data easier to understand and to highlight different aspects of the relationship between economic growth and meat consumption.    
 """)
 
 # --- Load Data ---
