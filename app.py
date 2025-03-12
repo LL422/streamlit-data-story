@@ -257,7 +257,7 @@ st.markdown("""
 
 st.markdown("""
 
-###Failed Attempts and Changes
+### Failed Attempts and Changes
 
 At first, we considered using only static charts, but they didn’t allow for exploring different country and meat type combinations. Adding interactivity made it possible to see multiple perspectives in one place.
 
