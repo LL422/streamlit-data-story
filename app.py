@@ -194,17 +194,17 @@ st.markdown("""
 """)
 
 # --- Bar Chart: Meat Consumption Comparison in a Specific Year ---
-st.subheader(f"{selected_meat} Consumption Comparison in 2020")
+st.subheader(f"Poultry Consumption Comparison in 2020")
 
 latest_year_df = filtered_df[filtered_df['Year'] == 2020]
-bar_fig = px.bar(latest_year_df, x='Entity', y=selected_meat, color='Entity',
-                 title=f"{selected_meat} Consumption in Selected Countries (2020)",
-                 labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
+bar_fig = px.bar(latest_year_df, x='Entity', y='Poultry', color='Entity',
+                 title=f"Poultry Consumption in Selected Countries (2020)",
+                 labels={'Poultry': 'Poultry Consumption (kg per capita)'})
 
 st.plotly_chart(bar_fig)
 
 st.markdown(f"""
-**Analysis:** This bar chart compares {selected_meat} consumption in 2020 across the selected countries. The United States and Germany have higher consumption levels, which aligns with their economic strength and dietary preferences. In contrast, India and Nigeria have much lower consumption levels. This could be due to a combination of economic factors and cultural practices that influence dietary choices.
+**Analysis:** This bar chart compares poultry consumption in 2020 across the selected countries. The United States and Germany have higher consumption levels, which aligns with their economic strength and dietary preferences. In contrast, India and Nigeria have much lower consumption levels. This could be due to a combination of economic factors and cultural practices that influence dietary choices.
 """)
 
 # --- Correlation Heatmap ---
