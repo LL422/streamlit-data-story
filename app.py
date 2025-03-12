@@ -195,7 +195,7 @@ st.markdown("""
 
 # --- Bar Chart: Meat Consumption Comparison in a Specific Year ---
 st.subheader(f"Poultry Consumption Comparison in 2020")
-
+st.markdown("""This bar chart shows how much poultry people in each country ate per person in 2020. The taller the bar, the more poultry people consumed on average.""")
 latest_year_df = filtered_df[filtered_df['Year'] == 2020]
 bar_fig = px.bar(latest_year_df, x='Entity', y='Poultry', color='Entity',
                  title=f"Poultry Consumption in Selected Countries (2020)",
@@ -204,7 +204,17 @@ bar_fig = px.bar(latest_year_df, x='Entity', y='Poultry', color='Entity',
 st.plotly_chart(bar_fig)
 
 st.markdown(f"""
-**Analysis:** This bar chart compares poultry consumption in 2020 across the selected countries. The United States and Germany have higher consumption levels, which aligns with their economic strength and dietary preferences. In contrast, India and Nigeria have much lower consumption levels. This could be due to a combination of economic factors and cultural practices that influence dietary choices.
+**What This Chart Tells Us:**
+
+- **United States & Germany:** People in these countries eat a lot of poultry. This is because poultry is affordable, widely available, and a common part of their diets. In the U.S., fast food and processed poultry products also contribute to higher consumption.
+
+- **India & Nigeria:** People in these countries eat much less poultry. In India, religious and cultural beliefs influence meat consumption, and many people follow vegetarian diets. In Nigeria, lower incomes and limited access to poultry make it harder for people to afford and eat as much chicken.
+
+**Why This Matters:**
+
+- Countries with more money generally have easier access to poultry, making it a bigger part of their diet.
+
+- Cultural traditions and food preferences still play a big role—just because a country can afford more meat doesn’t always mean people will eat it.
 """)
 
 # --- Correlation Heatmap ---
