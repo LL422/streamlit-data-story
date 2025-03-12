@@ -173,7 +173,6 @@ st.subheader(f"Comparison of GDP per Capita and Total Meat Consumption")
 
 st.markdown("""
 This scatter plot helps us understand if there’s a connection between a country’s economic strength (GDP per capita) and how much meat its people consume. Each dot represents a country in a specific year, showing whether wealthier nations eat more meat.
----
             """)
 
 comparison_fig = px.scatter(filtered_df, x='GDP_per_capita', y='Total_meat_consumption', color='Entity',
