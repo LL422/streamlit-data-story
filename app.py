@@ -65,40 +65,71 @@ def load_data():
 
     return merged_data
 
-# Load the merged data
+# Load data
 df = load_data()
 
-# --- Move Filters to Main Page ---
-st.markdown("""
-### Explore Meat Consumption Trends
-Select countries and meat types below to see how consumption and GDP have changed over time.
-""")
+# --- User Inputs ---
+st.title("Explore Meat Consumption Trends")
+st.markdown("Select countries and meat types below to see how consumption and GDP have changed over time.")
 
-# Country and Meat Type Selection
 col1, col2 = st.columns(2)
 
 with col1:
-    countries = df['Entity'].unique()
-    selected_countries = st.multiselect("Select Countries:", countries, default=['United States', 'India', 'Germany', 'Nigeria'])
+    countries = df["Entity"].unique()
+    selected_countries = st.multiselect("Select Countries:", countries, default=["United States", "India", "Germany", "Nigeria"])
 
 with col2:
-    meat_types = ['Poultry', 'Beef', 'Sheep and goat', 'Pork', 'Other meats', 'Fish and seafood']
+    meat_types = ["Poultry", "Beef", "Sheep and goat", "Pork", "Other meats", "Fish and seafood"]
     selected_meat = st.selectbox("Select Meat Type:", meat_types)
 
-# Filter the Data
-filtered_df = df[df['Entity'].isin(selected_countries)]
+# Filter Data
+filtered_df = df[df["Entity"].isin(selected_countries)]
 
-# --- Visualization: Trend Over Time for Selected Countries ---
+# --- Visualization ---
 st.subheader(f"{selected_meat} Consumption Over Time")
 
-fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
-              title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
-              labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
+fig = px.line(
+    filtered_df, 
+    x="Year", 
+    y=selected_meat, 
+    color="Entity",
+    title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
+    labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"}
+)
 
 st.plotly_chart(fig)
 
+# --- Dynamic Analysis ---
 st.markdown(f"""
-**Analysis:** The line chart above shows how {selected_meat} consumption has changed in the selected countries from 1961 to 2020. In developed countries like the United States and Germany, there's a clear increase in {selected_meat} consumption over time. This likely reflects both economic growth and a shift in dietary habits. On the other hand, developing countries like India and Nigeria have seen much slower growth or even stable levels of {selected_meat} consumption. This could be due to cultural factors, economic challenges, or limited access to certain types of meat.
+### **Analysis Based on Selection**
+This chart displays **{selected_meat} consumption per capita (kg per year)** from **1961 to 2020** for the selected countries.
+
+#### **What to Look For:**
+- **General Trends:** Are some countries increasing or decreasing their {selected_meat} consumption?
+- **Developed vs. Developing:** Do richer countries consume more {selected_meat} than poorer ones?
+- **Cultural & Economic Influences:** Some countries may have stable or low consumption due to traditions or affordability.
+
+#### **Key Insights for Your Selection:**
+""")
+
+# Generate Insights Based on User Selections
+for country in selected_countries:
+    country_data = filtered_df[filtered_df["Entity"] == country]
+
+    if country_data[selected_meat].isnull().all():
+        st.markdown(f"- **{country}:** No available data for {selected_meat}.")
+        continue
+
+    start_value = country_data[selected_meat].iloc[0]
+    end_value = country_data[selected_meat].iloc[-1]
+
+    trend = "increased" if end_value > start_value else "decreased"
+
+    st.markdown(f"- **{country}:** {selected_meat} consumption has **{trend}** from **{start_value:.2f} kg per capita** in {country_data['Year'].iloc[0]} to **{end_value:.2f} kg per capita** in {country_data['Year'].iloc[-1]}.")
+
+st.markdown("""
+---
+**Explore more:** Adjust the selections above to see different patterns across countries and meat types.
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
