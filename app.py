@@ -74,43 +74,31 @@ st.markdown("""
 Select countries and meat types below to see how consumption and GDP have changed over time.
 """)
 
+# Country and Meat Type Selection
+col1, col2 = st.columns(2)
 
+with col1:
+    countries = df['Entity'].unique()
+    selected_countries = st.multiselect("Select Countries:", countries, default=['United States', 'India', 'Germany', 'Nigeria'])
 
+with col2:
+    meat_types = ['Poultry', 'Beef', 'Sheep and goat', 'Pork', 'Other meats', 'Fish and seafood']
+    selected_meat = st.selectbox("Select Meat Type:", meat_types)
 
-st.subheader("Dataset Preview")
-st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
+# Filter the Data
+filtered_df = df[df['Entity'].isin(selected_countries)]
 
-st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].groupby("Entity").head(5))
+# --- Visualization: Trend Over Time for Selected Countries ---
+st.subheader(f"{selected_meat} Consumption Over Time")
 
-st.subheader("Dataset Preview")
-st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
+fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
+              title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
+              labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
 
-st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].head())
+st.plotly_chart(fig)
 
-selected_countries = ["United States", "Germany", "India", "Nigeria"]
-filtered_df = df[df["Entity"].isin(selected_countries)]
-st.markdown("""
-This chart shows the annual **poultry consumption per capita (kg per person per year)** in the selected countries from **1961 to 2020**.
-
-- **X-axis:** Years (1961–2020)
-- **Y-axis:** Poultry consumption per person (kg)
-- **Colored Lines:** Each line represents a different country’s trend.
-
-#### **What This Chart Shows:**
-- **United States & Germany:** Significant increase in poultry consumption, reflecting economic growth and improved food accessibility.
-- **India & Nigeria:** Much lower poultry consumption, staying stable due to cultural and economic factors.
-""")
-
-st.subheader("Poultry Consumption Over Time")
-
-fig = px.line(filtered_df, x='Year', y="Poultry", color='Entity',
-              title="Poultry Consumption in Selected Countries (1961-2020)",
-              labels={"Poultry": "Poultry Consumption (kg per capita)"})
-
-st.markdown("""
-**🔹 Key Takeaways:**  
-- **United States and Germany** show a clear increase in poultry consumption due to economic prosperity.  
-- **India and Nigeria** maintain **low poultry consumption**, influenced by cultural and financial constraints.
+st.markdown(f"""
+**Analysis:** The line chart above shows how {selected_meat} consumption has changed in the selected countries from 1961 to 2020. In developed countries like the United States and Germany, there's a clear increase in {selected_meat} consumption over time. This likely reflects both economic growth and a shift in dietary habits. On the other hand, developing countries like India and Nigeria have seen much slower growth or even stable levels of {selected_meat} consumption. This could be due to cultural factors, economic challenges, or limited access to certain types of meat.
 """)
 
 # --- GDP Trend Over Time for Selected Countries ---
@@ -121,7 +109,6 @@ gdp_fig = px.line(filtered_df, x='Year', y='GDP_per_capita', color='Entity',
                   labels={'GDP_per_capita': 'GDP per Capita (constant 2017 international $)'})
 
 st.plotly_chart(gdp_fig)
-
 
 st.markdown("""
 **Analysis:** This graph shows how GDP per capita has grown in the selected countries over the years. The United States and Germany have seen steady economic growth, with a noticeable rise in GDP per capita, reflecting their status as developed nations. In contrast, Nigeria and India, as developing countries, have lower GDP per capita values, although they show signs of gradual improvement. These differences in economic status are important because they can influence what people can afford to eat, including different types of meat.
