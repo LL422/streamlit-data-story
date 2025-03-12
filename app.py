@@ -35,7 +35,7 @@ As economies grow, diets change. Meat consumption is more than just a food choic
 - Culture shapes food choices, sometimes limiting meat consumption regardless of income.
 - **Example:** In India, many avoid beef due to religious beliefs, even though economic growth allows them to afford it. In contrast, pork is deeply rooted in German cuisine, where it remains a staple in traditional dishes.
 
-** Environmental Concerns:**
+**Environmental Concerns:**
 - Meat productions requires large amounts of land, water and energy. Some meats, like beef, have a high environmental cost.
 - **Example:** In the United States, large-scale beef production contributes to high greenhouse gas emissions. Meanwhile, Nigeria's lower meat consumption has a smaller environmental footprint, but as the economy grows, demand for meat may increase, potentially leading to environmental challenges.             
 ---
