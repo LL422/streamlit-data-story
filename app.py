@@ -97,6 +97,10 @@ st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria
 # --- Visualization: Trend Over Time for Selected Countries ---
 st.subheader(f"{selected_meat} Consumption Over Time")
 
+fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
+              title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
+              labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
+
 st.markdown("""
 This chart shows the annual **poultry consumption per capita (kg per person per year)** in the selected countries from **1961 to 2020**.
 
