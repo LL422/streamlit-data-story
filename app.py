@@ -80,11 +80,15 @@ Select countries and meat types below to see how consumption and GDP have change
 st.subheader("Dataset Preview")
 st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
 
+st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].groupby("Entity").head(5))
+
+st.subheader("Dataset Preview")
+st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
+
 st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].head())
 
 selected_countries = ["United States", "Germany", "India", "Nigeria"]
 filtered_df = df[df["Entity"].isin(selected_countries)]
-
 st.markdown("""
 This chart shows the annual **poultry consumption per capita (kg per person per year)** in the selected countries from **1961 to 2020**.
 
