@@ -364,6 +364,25 @@ If we were to improve this further, we might add more filtering options or deepe
 
             """)
 
+st.markdown("""
+---
+
+Why These Visualizations Were Chosen
+
+We used different types of charts to make the data easier to understand. Line charts help show trends over time, bar charts compare countries in a specific year, scatter plots highlight relationships between variables, and heatmaps reveal correlations. Each visualization was selected to highlight key insights about how economic growth and cultural factors influence meat consumption.
+
+---
+""")
+
+st.markdown("""
+---
+
+Ethical Considerations
+
+This project focuses on economic trends and food consumption patterns. However, it’s important to acknowledge ethical concerns like food security, sustainability, and cultural sensitivity. Meat production has environmental impacts, and economic inequalities affect access to food. These factors should be considered when interpreting the data.
+---
+""")
+
 # --- Reflection ---
 st.markdown("""
 ---
@@ -398,5 +417,9 @@ st.markdown("""
 Scibearia. (2024, December 12). Meat consumption per capita. Kaggle. https://www.kaggle.com/datasets/scibearia/meat-consumption-per-capita 
             
 Jiao, Hongxia. “An Overview of Meat Consumption in the United States.” Farmdoc Daily, 12 May 2021, farmdocdaily.illinois.edu/2021/05/an-overview-of-meat-consumption-in-the-united-states.html. 
+            
+“The Meat Industry – Environmental Issues & Solutions.” Clean Water Action, cleanwater.org/meat-industry-environmental-issues-solutions. Accessed 12 Mar. 2025. 
+
+González, Neus, et al. “Meat Consumption: Which Are the Current Global Risks? A Review of Recent (2010-2020) Evidences.” Food Research International (Ottawa, Ont.), U.S. National Library of Medicine, Nov. 2020, pmc.ncbi.nlm.nih.gov/articles/PMC7256495/. 
 
 """)
