@@ -253,6 +253,7 @@ st.plotly_chart(other_meats_fig)
 
 st.markdown("""
 **Analysis:** The "Other Meats" category includes less common types of meat, and their consumption can vary greatly depending on local traditions and availability. Nigeria, for example, might have higher consumption of these meats due to diverse local diets, while countries like the United States and Germany may consume less.
+---
 """)
 
 st.markdown("""
