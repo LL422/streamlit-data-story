@@ -366,7 +366,7 @@ If we were to improve this further, we might add more filtering options or deepe
 
 st.markdown("""
 
-**Why These Visualizations Were Chosen**
+### Why These Visualizations Were Chosen
 
 We used different types of charts to make the data easier to understand. Line charts help show trends over time, bar charts compare countries in a specific year, scatter plots highlight relationships between variables, and heatmaps reveal correlations. Each visualization was selected to highlight key insights about how economic growth and cultural factors influence meat consumption.
 
@@ -375,7 +375,7 @@ We used different types of charts to make the data easier to understand. Line ch
 
 st.markdown("""
 
-**Ethical Considerations**
+### Ethical Considerations
 
 This project focuses on economic trends and food consumption patterns. However, ethical concerns such as food security, sustainability, and cultural sensitivity should be considered. Meat production has significant environmental impacts, including deforestation, greenhouse gas emissions, and resource consumption. Additionally, economic inequalities affect access to meat, which can highlight disparities in food availability between countries.
 
