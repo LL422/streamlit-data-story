@@ -74,21 +74,26 @@ st.markdown("""
 Select countries and meat types below to see how consumption and GDP have changed over time.
 """)
 
-# Fix the dataset to show only the four selected countries
-selected_countries = ["United States", "Germany", "India", "Nigeria"]
-filtered_df = df[df["Entity"].isin(selected_countries)]
+# Country and Meat Type Selection
+col1, col2 = st.columns(2)
 
-st.subheader("Dataset Preview")
-st.markdown("Below is a preview of the dataset used in this analysis, focusing on the four selected countries.")
+with col1:
+    countries = df['Entity'].unique()
+    selected_countries = st.multiselect("Select Countries:", countries, default=['United States', 'India', 'Germany', 'Nigeria'])
 
-st.dataframe(df[df["Entity"].isin(["United States", "Germany", "India", "Nigeria"])].head())
+with col2:
+    meat_types = ['Poultry', 'Beef', 'Sheep and goat', 'Pork', 'Other meats', 'Fish and seafood']
+    selected_meat = st.selectbox("Select Meat Type:", meat_types)
 
+# Filter the Data
+filtered_df = df[df['Entity'].isin(selected_countries)]
 
-st.subheader("Poultry Consumption Over Time")
+# --- Visualization: Trend Over Time for Selected Countries ---
+st.subheader(f"{selected_meat} Consumption Over Time")
 
-fig = px.line(filtered_df, x='Year', y="Poultry", color='Entity',
-              title="Poultry Consumption in Selected Countries (1961-2020)",
-              labels={"Poultry": "Poultry Consumption (kg per capita)"})
+fig = px.line(filtered_df, x='Year', y=selected_meat, color='Entity',
+              title=f"{selected_meat} Consumption in Selected Countries (1961-2020)",
+              labels={selected_meat: f"{selected_meat} Consumption (kg per capita)"})
 
 st.plotly_chart(fig)
 
