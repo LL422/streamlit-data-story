@@ -265,7 +265,7 @@ At first, we considered using only static charts, but they didn’t allow for ex
 We also tried using only line charts, but they didn’t effectively show country comparisons at a single point in time, which is why bar charts were included. Additionally, scatter plots were added to better illustrate the link between GDP and meat consumption, which was unclear in other formats. Finally, heatmaps were introduced to visualize overall correlations more effectively.
 
 If we were to improve this further, we might add more filtering options or deeper breakdowns by region and income level to give a broader global perspective.
-
+---
             """)
 
 # --- Reflection ---
