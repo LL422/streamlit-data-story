@@ -6,7 +6,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # --- Title and Introduction ---
-st.title("The Relationship and the Impact Between Economic Growth and Meat Consumption")
+st.title("Money, Meat, and Culture: How Economic Growth Shapes What We Eat")
 
 st.markdown("""
 ### Main Idea
