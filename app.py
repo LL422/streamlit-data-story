@@ -39,6 +39,18 @@ As economies grow, diets change. Meat consumption is more than just a food choic
 - Meat productions requires large amounts of land, water and energy. Some meats, like beef, have a high environmental cost.
 - **Example:** In the United States, large-scale beef production contributes to high greenhouse gas emissions. Meanwhile, Nigeria's lower meat consumption has a smaller environmental footprint, but as the economy grows, demand for meat may increase, potentially leading to environmental challenges.             
 ---
+
+Why We Use These Charts:
+
+- **Line Charts:** Best for showing trends over time, making it easy to see how meat consumption has increased or decreased.
+
+- **Bar Charts:** Useful for comparing meat consumption between countries in a single year.
+
+- **Scatter Plots:** Help visualize the relationship between GDP per capita and meat consumption.
+
+- **Heatmaps:** Show correlations between GDP and different types of meat consumption, helping to highlight patterns across multiple variables.
+
+Each chart type was chosen to make complex data easier to understand and to highlight different aspects of the relationship between economic growth and meat consumption.
 """)
 
 # --- Load Data ---
