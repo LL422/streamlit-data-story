@@ -40,7 +40,7 @@ As economies grow, diets change. Meat consumption is more than just a food choic
 - **Example:** In the United States, large-scale beef production contributes to high greenhouse gas emissions. Meanwhile, Nigeria's lower meat consumption has a smaller environmental footprint, but as the economy grows, demand for meat may increase, potentially leading to environmental challenges.             
 ---
 
-Why We Use These Charts:
+### Why We Use These Charts:
 
 - **Line Charts:** Best for showing trends over time, making it easy to see how meat consumption has increased or decreased.
 
@@ -51,6 +51,7 @@ Why We Use These Charts:
 - **Heatmaps:** Show correlations between GDP and different types of meat consumption, helping to highlight patterns across multiple variables.
 
 Each chart type was chosen to make complex data easier to understand and to highlight different aspects of the relationship between economic growth and meat consumption.
+---    
 """)
 
 # --- Load Data ---
@@ -253,6 +254,18 @@ st.plotly_chart(other_meats_fig)
 st.markdown("""
 **Analysis:** The "Other Meats" category includes less common types of meat, and their consumption can vary greatly depending on local traditions and availability. Nigeria, for example, might have higher consumption of these meats due to diverse local diets, while countries like the United States and Germany may consume less.
 """)
+
+st.markdown("""
+
+###Failed Attempts and Changes
+
+At first, we considered using only static charts, but they didn’t allow for exploring different country and meat type combinations. Adding interactivity made it possible to see multiple perspectives in one place.
+
+We also tried using only line charts, but they didn’t effectively show country comparisons at a single point in time, which is why bar charts were included. Additionally, scatter plots were added to better illustrate the link between GDP and meat consumption, which was unclear in other formats. Finally, heatmaps were introduced to visualize overall correlations more effectively.
+
+If we were to improve this further, we might add more filtering options or deeper breakdowns by region and income level to give a broader global perspective.
+
+            """)
 
 # --- Reflection ---
 st.markdown("""
