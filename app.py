@@ -184,13 +184,17 @@ comparison_fig = px.scatter(filtered_df, x='GDP_per_capita', y='Total_meat_consu
 st.plotly_chart(comparison_fig)
 
 st.markdown("""
-**Analysis:**
+**What This Chart Tells Us:**
 
-- **United States & Germany:** Higher GDP per capita correlates with higher total meat consumption, showing that economic prosperity enables greater access to meat.
+- **United States & Germany:** These countries have high GDP per capita, meaning people earn more money on average. This allows them to afford more meat, making it a regular part of their diet.
 
-- **India & Nigeria:** These countries have lower GDP per capita and correspondingly lower meat consumption, though cultural and religious factors also play a role.
+- **India & Nigeria:** These countries have lower GDP per capita, meaning less money is available for food. Meat is more expensive, so people eat less of it. However, in India, religious and cultural beliefs also limit meat consumption, even for wealthier individuals.
 
-- **Key takeaway:** While GDP plays a significant role in determining meat consumption, cultural influences such as dietary restrictions in India also shape consumption patterns.
+**Why This Matters:
+
+- Economic growth allows for greater access to meat, but affordability isn’t the only factor—cultural and religious beliefs still shape what people eat.
+
+- Higher GDP generally leads to higher meat consumption, but this trend isn’t universal. India is a clear example where cultural preferences override economic factors.
 """)
 
 # --- Bar Chart: Meat Consumption Comparison in a Specific Year ---
