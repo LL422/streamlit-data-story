@@ -9,46 +9,28 @@ import matplotlib.pyplot as plt
 st.title("The Relationship Between Economic Growth and Meat Consumption")
 
 st.markdown("""
+### Main Idea
+This project explores the relationship between economic growth (measured by GDP per capita) and meat consumption in various countries, focusing on:
+- **Developed Countries:** United States & Germany  
+- **Developing Countries:** India & Nigeria  
 
-Main Idea
+By analyzing these trends, we aim to uncover how economic prosperity influences dietary habits and how cultural, environmental, and economic factors shape meat consumption patterns globally.
 
-This project explores the relationship between economic growth (measured by GDP per capita) and meat consumption in various countries. We focus on:
+---
+            
+### Why These Countries?
+We selected these countries because they represent different economic stagtes and dietary habits:
+- **United States & Germany: High-income countries with strong food industries and high meat consumption. The U.S. leads in beef and poultry, while Germany consumes more pork.
+- **India & Nigeria: Lower-income countries where cultural and economic factors limit meat consumption. India has a large vegetarian population, while Nigeria's meat intake depends on affordability and availability.
 
-Developed Countries: United States & Germany
+---                         
 
-Developing Countries: India & Nigeria
+### Why This Matters
+As economies grow, diets change. Meat consumption is more than just a food choice—it reflects income levels, cultural traditions, and environmental impacts.
 
-Why These Countries?
-
-We chose these countries because they represent different stages of economic development and have distinct dietary patterns:
-
-United States & Germany: These are high-income nations with well-developed food industries, widespread access to meat, and diets that include large amounts of animal products. The U.S. is known for its high beef and poultry consumption, while Germany has a strong tradition of pork consumption.
-
-India & Nigeria: These countries have lower income levels and different cultural and religious influences that shape their diets. India has a large vegetarian population due to religious beliefs, and Nigeria’s meat consumption is affected by income levels, availability, and regional dietary habits.
-
-Why This Matters
-
-As economies grow, diets change. Meat consumption is often seen as a sign of rising living standards because people can afford more protein-rich foods. But it’s not just about money—cultural traditions and environmental concerns also play a role.
-
-Economic Development:
-
-When a country’s economy grows, people have more money to spend on food, often leading to increased meat consumption.
-
-Example: In China, rising incomes over the past few decades have led to a huge increase in pork consumption, making China the world’s largest pork consumer.
-
-Cultural Traditions:
-
-Different cultures have unique dietary habits that influence meat consumption.
-
-Example: In India, many people avoid beef due to religious beliefs, even if they can afford it. In contrast, Germany’s culture includes a strong preference for pork, which is a staple in many traditional dishes.
-
-Environmental Impacts:
-
-Meat production requires a lot of land, water, and energy. Some types of meat, like beef, produce a large amount of greenhouse gases.
-
-Example: In Brazil, large areas of the Amazon rainforest have been cleared to create land for cattle farming, which contributes to climate change.
-
-Understanding these connections helps us see how economic growth, culture, and the environment shape what people eat and why it matters for the future.
+**Economic Impact:
+- Higher GDP means people can afford more meat, often viewed as a sign of wealth and improved nutrition.            
+---
 """)
 
 # --- Load Data ---
